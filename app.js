@@ -101,7 +101,7 @@ app.use((req,res,next)=>{
 
 
 app.use("/listings", listingRouter);
-app.use("/listins/:id/reviews", reviewsRouter);
+app.use("/listings/:id/reviews", reviewsRouter);
 app.use("/",userRouter);
 
 app.all(/.*/,(req,res,next)=>{
