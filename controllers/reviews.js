@@ -1,9 +1,9 @@
 const Listing = require("../models/listing.js");
 const Review = require("../models/review.js");
 
-module.exports.createReview = async (req,res)=>{
+module.exports.newReview = async (req,res)=>{
     let listing = await Listing.findById(req.params.id);
-    let newReview = new Review (req.body.review);
+    let newReview = new Reviews (req.body.review);
     newReview.author = req.user._id;
     listing.reviews.push(newReview);
 
@@ -14,14 +14,14 @@ module.exports.createReview = async (req,res)=>{
     // console.log("new review saved");
     // res.send("review added successfully");
 
-    res.redirect(`/listing/${listing._id}`);
+    res.redirect(`/listings/${listing._id}`);
 }
 
 module.exports.deleteReview = async (req,res)=>{
-    let {id,reviewId} = req.params;
-    Listing.findByIdAndUpdate(id,{$pull:{reviews:reviewId}});
-    await Review.findByIdAndDelete(reviewId);
+    let {id,reviewsId} = req.params;
+    Listing.findByIdAndUpdate(id,{$pull:{reviews:reviewsId}});
+    await Review.findByIdAndDelete(reviewsId);
     req.flash("success"," review deleted");
 
-    res.redirect(`/listing/${id}`);
+    res.redirect(`/listings/${id}`);
 }
