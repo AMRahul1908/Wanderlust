@@ -1,9 +1,9 @@
-<%layout("layouts/boilerplate")%>
-    <Form method="POST" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data">
+<%layout("/layouts/boilerplate")%>
         <div class="row mt-3">
             <div class="col-8 offset-2">
                 <br></br>
                 <h3>Create New Listing<h3>
+                   <form method="post" action="/listings"  novalidateclass="needs-validation" enctype="multipart/form-data">
                         <div class="mb-3">
                             <lable for="title" class="form-label">Title</lable>
                             <input name="listing[title]" placeholder="Enter a catchy title" type="text"
@@ -44,9 +44,9 @@
                                 required>
                             <div class="invalid-feedback">Enter valid location</div>
                         </div>
-
-
+                    </br>
                         <button class="btn btn-dark add-btn mt-3">Add</button>
+                    <br>
 
     </Form>
     </div>
