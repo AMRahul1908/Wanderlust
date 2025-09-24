@@ -1,7 +1,7 @@
 <% layout("/layouts/boilerplate") %>
   <script>
     const mapToken = "<%= process.env.MAP_TOKEN %>";
-    const listing = <% - JSON.stringify(listing) %>;
+    const listing = <%- JSON.stringify(listing) %>;
   </script>
 
   <div class="row">
@@ -36,7 +36,7 @@
       <div class="btns mb-3">
         <a href="/listings/<%= listing._id %>/edit" class="btn btn-dark col-1 offset-3 btn-edit">Edit</a>
 
-        <form method="POST" action="/listing/<%= listing._id %>?_method=DELETE">
+        <form method="POST" action="/listings<%= listing._id %>?_method=DELETE">
           <button class="btn btn-dark offset-5">Delete</button>
         </form>
       </div>
