@@ -36,20 +36,20 @@
       <div class="btns mb-3">
         <a href="/listings/<%= listing._id %>/edit" class="btn btn-dark col-1 offset-3 btn-edit">Edit</a>
 
-        <form method="POST" action="/listings<%= listing._id %>?_method=DELETE">
+        <form method="POST" action="/listings/<%= listing._id %>?_method=DELETE">
           <button class="btn btn-dark offset-5">Delete</button>
         </form>
       </div>
       <% } %>
 
-       <div class="col-8 offset-3 mt-3">
+        <div class="col-8 offset-3 mt-3">
 
           <% if(currUser) { %>
             <hr>
             <h4>Leave a Review</h4>
             <form class="needs-validation mb-3 mt-3" action="/listings/<%= listing._id %>/reviews" method="POST"
               novalidate>
-              
+
 
               <div class="mb-3 mt-3">
                 <label for="rating" class="form-label">Rating</label>
@@ -81,7 +81,7 @@
             </form>
             <% } %>
 
-            
+
               <% if(listing.reviews.length> 0) { %>
                 <div class="row">
                   <hr>
