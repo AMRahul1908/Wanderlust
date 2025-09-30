@@ -9,9 +9,9 @@ const userController = require("../controllers/users.js");
 
 
 router.route("/signup",)
-    .get(userController.SignUp
+    .get(userController.signup
 )
-    .post(wrapAsync(userController.SignUp));
+    .post(wrapAsync(userController.signup));
 
 router.route("/login")
     .get(userController.renderLoginForm)
